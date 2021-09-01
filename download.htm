@@ -1,0 +1,470 @@
+ <!DOCTYPE html>
+<!--html5-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  	<meta charset="utf-8" />
+
+	<title>Arduino Playground - StopWatchClass </title>
+	<link rel="shortcut icon" type="image/x-icon" href="../../favicon/index.ico" />
+
+	<link rel="stylesheet" href="https://content.arduino.cc/legacy/fonts/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="https://content.arduino.cc/legacy/css/arduino-icons.css">
+	<link rel="stylesheet" href="https://content.arduino.cc/legacy/css/animation.css"><!--[if IE 7]>
+	<link rel="stylesheet" href="//content.arduino.cc/legacy/css/arduino-icons-ie7.css"><![endif]-->
+	<!--[if gte IE 9]><!-->
+	<link rel='stylesheet' href='https://content.arduino.cc/legacy/css/foundation2.css' type='text/css' />
+	<![endif]-->
+	<!--[if IE 8]>
+		<link rel='stylesheet' href='//content.arduino.cc/legacy/css/foundation_ie8.css' type='text/css' />	
+	<![endif]-->	
+	<link rel='stylesheet' href='https://content.arduino.cc/legacy/css/arduino_code_highlight.css' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://content.arduino.cc/legacy/css/typeplate.css">
+	<link rel='stylesheet' href='https://content.arduino.cc/legacy/css/common.css' type='text/css' />	 
+	<link rel='stylesheet' href='../../pub/skins/arduinoWide_SSO/css/arduinoWide_SSO/index.css?nocache=1' type='text/css' /> 
+	<link href="https://plus.google.com/114839908922424087554" rel="publisher" />
+    <link rel="stylesheet" href="https://cdn.arduino.cc/header-footer/prod/index.v2.css" type="text/css">
+	<script src="https://content.arduino.cc/legacy/js/vendor/custom.modernizr.js"></script>
+</head>
+<body>
+	<div id="header"></div>
+	<div id="menuWings" class="fixed"></div>
+	<div id="page">
+        
+        <div style="margin-top: 16px;text-align: center; padding: 16px; background: #fcf6c9; font-size: 18px; line-height: 150%;">
+        Arduino Playground is read-only starting December 31st, 2018. For more info please look at this <a href='https://forum.arduino.cc/index.php?topic=580991.0' target="_blank">Forum Post</a>
+        </div>
+		<br class="clear"/>
+
+		<!--PageLeftFmt-->
+		<div id="pagenav">
+			<p><em>The <a class='wikilink' href='../../Main/HomePage/'>playground</a> is a publicly-editable wiki about <a class='urllink' href='https://www.arduino.cc/' rel='nofollow'>Arduino</a>.</em>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/ManualsAndCurriculum/'>Manuals and Curriculum</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='urllink' href='https://arduino.stackexchange.com/' rel='nofollow'>Arduino StackExchange</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/ArduinoCoreHardware/'>Board Setup and Configuration</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/DevelopmentTools/'>Development Tools</a>
+</p>
+<p class='vspace'></p><p class='sidehead'> <a class='wikilink' href='../../Main/ArduinoOnOtherAtmelChips/'>Arduino on other Chips</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/InterfacingWithHardware/'>Interfacing With Hardware</a>
+</p><ul><li><a class='wikilink' href='../../Main/InterfacingWithHardware/#Output'>Output</a>
+</li><li><a class='wikilink' href='../../Main/InterfacingWithHardware/#InputTOC'>Input</a>
+</li><li><a class='wikilink' href='../../Main/InterfacingWithHardware/#ui'>User Interface</a>
+</li><li><a class='wikilink' href='../../Main/InterfacingWithHardware/#Storage'>Storage</a>
+</li><li><a class='wikilink' href='../../Main/InterfacingWithHardware/#Communication'>Communication</a> 
+</li><li><a class='wikilink' href='../../Main/IntWithHW-PwrSup/'>Power supplies</a> 
+</li><li><a class='wikilink' href='../../Main/InterfacingWithHardware/#General'>General</a> 
+</li></ul><p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/InterfacingWithSoftware/'>Interfacing with Software</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/GeneralCodeLibrary/'>User Code Library</a>
+</p><ul><li><a class='wikilink' href='../../Main/SketchList/'>Snippets and Sketches</a>
+</li><li><a class='wikilink' href='../../Main/LibraryList/'>Libraries</a>
+</li><li><a class='wikilink' href='../../Main/TutorialList/'>Tutorials</a>
+</li></ul><p class='vspace'></p><p class='sidehead'><a class='urllink' href='https://github.com/arduino/arduino/issues' rel='nofollow'>Suggestions &amp; Bugs</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/ElectroInfoResources/'>Electronics Technique</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/Resources/'>Sources for Electronic Parts</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/SimilarBoards/'>Related Hardware and Initiatives</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='urllink' href='../../Main/People/' rel='nofollow'>Arduino People/Groups &amp; Sites</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='urllink' href='../../Projects/ArduinoUsers/' rel='nofollow'>Exhibition</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='urllink' href='../../Projects/Ideas/' rel='nofollow'>Project Ideas</a>
+</p>
+<p class='vspace'></p><p class='sidehead'><a class='wikilink' href='../../Main/Languages/'>Languages</a>
+</p>
+<p class='vspace'></p><hr />
+<p class='vspace'></p><p class='sidehead'> <a class='wikilink' href='../../Main/Participate/'>Participate</a>
+</p><ul><li><a class='wikilink' href='../../Main/Participate/#contribrules'>Formatting guidelines</a>
+</li><li><a class='wikilink' href='../../Site/AllRecentChanges/'>All recent changes</a>
+</li><li><a class='wikilink' href='../../PmWiki/PmWiki/'>PmWiki</a>
+</li><li><a class='wikilink' href='../../Main/WikiSandbox/'>WikiSandBox training</a>
+</li><li><a class='wikilink' href='../../PmWiki/BasicEditing/'>Basic Editing</a>
+</li><li><a class='urllink' href='https://www.pmwiki.org/wiki/PmWiki/DocumentationIndex' rel='nofollow'>Documentation index</a>
+</li></ul><p class='vspace'></p>
+
+		</div>
+		<!--/PageLeftFmt-->
+
+		
+
+		<div id="pagetext" class="playground">
+				<!--PageText-->
+<div id='wikitext'>
+<h2>A <span class='wikiword'>StopWatch</span> class for Arduino.</h2>
+<table  border='0' cellpadding='5' cellspacing='0'><tr><td  colspan='2' valign='top'>
+</td></tr><tr><td  valign='top'> Last Modified: 
+</td><td  valign='top'> November 30, 2013, at 05:02 AM
+</td></tr><tr><td  valign='top'> By:
+</td><td  valign='top'> robtillaart
+</td></tr><tr><td  valign='top'> Platform:
+</td><td  valign='top'> All
+</td></tr></table>
+<hr />
+<p><a class='urllink' href='https://arduino.cc/forum/index.php/topic,64024.0.html' rel='nofollow'>Forum Thread for remarks</a>
+</p>
+<p class='vspace'></p><p><a class='urllink' href='https://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1294169001' rel='nofollow'>Old Forum Thread (read only)</a>
+</p>
+<p class='vspace'></p><h3><span class='wikiword'>StopWatch</span> library</h3>
+<p>One of the main applications for the Arduino board is monitoring. And monitoring means measuring. Here I introduce a simple <span class='wikiword'>StopWatch</span> class to measure elapsed time.
+</p>
+<p class='vspace'></p><p>The <span class='wikiword'>StopWatch</span> class is in fact a wrapper around millis() and micros() with a few variables and an internal state. The internal state only holds running or not.
+</p>
+<p class='vspace'></p><p>The methods of the class are:
+</p>
+<p class='vspace'></p><pre>
+    StopWatch(res);	// constructor, resolution is MICROS, MILLIS
+                        // or SECONDS; MILLIS is the default..
+    void start();	// start / continue the measurement
+    void stop();	// stops the measurement
+    long reset();	// resets the measurement
+                        // (you can't continue)
+
+    unsigned long value();	// elapsed time since start; 
+                        	// depreciated in the future
+    unsigned long elapsed();    // elapsed time since start 
+
+    bool isRunning();	// for compatibility with previous version
+
+    enum State state();	// current state of the stopwatch
+    enum Resolution resolution();   // chosen time-ticks.
+
+- see .h file for all details.
+
+</pre>
+<p class='vspace'></p><p>To start the measurement one calls start() and internally the starttime is stored. The stopwatch is now running. At any time one can fetch the (lap)time by calling elapsed() giving the milliseconds [or micros or seconds] since start(). 
+To stop the <span class='wikiword'>StopWatch</span> one calls stop() - obvious - and now a call to value() will give the elapsed time between start() and stop(). Calling start() again and the counting will continue were it left. If one does not want that and want to start over again one needs to call reset() first. 
+</p>
+<p class='vspace'></p><p>As it is a Class one can also make arrays of stopwatches that measure time in parallel.
+</p>
+<p class='vspace'></p><h3>Usage</h3>
+<p>A small sketch shows how it can be used. 
+</p>
+<p class='vspace'></p><pre>
+#include &lt;StopWatch.h&gt;
+
+StopWatch MySW;
+StopWatch SWarray[5];
+
+void setup()
+{
+  Serial.begin(115200);
+  Serial.println("Stopwatch demo");
+  Serial.print("Version: ");
+  Serial.println(STOPWATCH_LIB_VERSION);
+
+  SWarray[0].start();
+}
+
+void loop()
+{
+  Serial.println(MySW.isRunning());
+  delay(100);
+
+  MySW.start();
+  Serial.println(MySW.isRunning());  
+  Serial.println("START 1");
+  for(int i=0; i&lt;5; i++)
+  {
+    delay(10);
+    Serial.println(MySW.elapsed());
+  }
+
+  MySW.stop();
+  Serial.println(MySW.isRunning());
+  Serial.println("STOP");
+  for(int i=0; i&lt;5; i++)
+  {
+    delay(10);
+    Serial.println(MySW.elapsed());
+  }
+
+  MySW.start();
+  Serial.println(MySW.isRunning());    
+  Serial.println("START 2");
+  for(int i=0; i&lt;5; i++)
+  {
+    delay(10);
+    Serial.println(MySW.elapsed());
+  }  
+  MySW.reset();
+  Serial.println(MySW.isRunning());
+  Serial.println("RESET");
+
+  MySW.start();
+  Serial.println(MySW.isRunning());
+  Serial.println("START 3");
+  for(int i=0; i&lt;5; i++)
+  {
+    delay(10);
+    Serial.println(MySW.elapsed());
+  }
+
+  switch(MySW.state())
+  {
+    case StopWatch::RESET: 
+      Serial.println("reset");  // e.g. disable stop/reset
+      break;
+    case StopWatch::RUNNING: 
+      Serial.println("running"); // display laptime
+      break;
+    case StopWatch::STOPPED: 
+      Serial.println("stopped"); // display finaltime
+      break;
+    default: 
+      Serial.println("unknown");
+      break;
+  }
+
+  delay(3000);
+  Serial.print(" &gt;&gt;&gt;  laptime loop() : ");
+  Serial.println(SWarray[0].elapsed());  
+}
+
+</pre>
+<p class='vspace'></p><p>There are two global vars, one "standalone" <span class='wikiword'>StopWatch</span> and an array of five <span class='wikiword'>StopWatches</span> (numbered 0..4 of course). In setup() the serial port is initialized to high speed so the printstatements take not too long. The version number of the library is printed and the first Stopwatch [0] from the array is started to measure the duration of loop(). Note this latter is never stopped. In loop() the standalone Stopwatch is started and stopped and the value displayed to get a feeling how it is used. Also a minimal use of state() is shown 
+</p>
+<p class='vspace'></p><p>Another sample sketch
+</p><pre>
+#include &lt;StopWatch.h&gt;
+#include &lt;LiquidCrystal.h&gt;
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+StopWatch sw_millis;    // MILLIS (default)
+StopWatch sw_micros(StopWatch::MICROS);
+StopWatch sw_secs(StopWatch::SECONDS);
+
+void setup() {
+    lcd.begin(16,2);
+    Serial.begin(9600);
+    sw_millis.start();
+    sw_micros.start();
+    sw_secs.start();
+}
+
+
+void loop() {
+    Serial.print("sw_millis=");
+    Serial.println(sw_millis.elapsed());
+    Serial.print("sw_micros=");
+    Serial.println(sw_micros.elapsed());
+    Serial.print("sw_secs=");
+    Serial.println(sw_secs.elapsed());
+
+    lcd.clear();
+    lcd.print("s=");
+    lcd.print(sw_secs.elapsed());
+    lcd.print(" ms=");
+    lcd.print(sw_millis.elapsed());
+    lcd.setCursor(0, 1);
+    lcd.print("us=");
+    lcd.print(sw_micros.elapsed());
+
+    delay(1000);
+}
+
+</pre>
+<p class='vspace'></p><p>Above sketches are just dummy showcases. Far more interesting sketches can be made. e.g. the start and stop can be steered by interrupt or based upon state of digital IO lines. 
+</p>
+<p class='vspace'></p><h3>Notes</h3>
+<p>The <span class='wikiword'>StopWatch</span> Class is based upon millis() [ micros()] so it inherits all of its behavior including overflow after a number of days [minutes in case of MICROS]. Be aware of this if you want to use the class for measurements that take days. For more information see <a class='urllink' href='https://www.arduino.cc/en/Reference/Millis' rel='nofollow'>Millis</a> in the reference section.
+</p>
+<p class='vspace'></p><p>To use this library, make a folder in your SKETCHBOOKPATH\libaries with the name <span class='wikiword'>StopWatch</span> and put the .h and .cpp there. Close all your IDE's and then it is ready to use.
+</p>
+<p class='vspace'></p><h3>Todo</h3>
+<ul><li>Create a sketch with real switches (START STOP RESET) and an LCD screen
+</li><li>Create a sketch using ISR()'s to measure time.
+</li><li>Move all code to .h file for inline version 
+(tip coding badly)
+</li></ul><p class='vspace'></p><h3>History</h3>
+<ul><li>2011-06-15 added state() and #defines =&gt; 0.1.02 
+=&gt; to differentiate between RESET and STOPPED state
+</li><li>2011-07-14 fixed bug in sample code 
+</li><li>2012-01-22 Improved version 0.1.03 (thanks to mromani)
+</li></ul><pre>             including 1.0 support
+</pre>
+<p class='vspace'></p><p>Enjoy tinkering,
+</p>
+<p class='vspace'></p><p>rob.tillaart@removethisgmail.com
+</p>
+<p class='vspace'></p><h3><span class='wikiword'>StopWatch</span>.h file</h3>
+<pre>
+#ifndef StopWatch_h
+#define StopWatch_h
+// 
+//    FILE: StopWatch.h
+//  AUTHOR: Rob Tillaart
+// PURPOSE: Simple StopWatch library for Arduino
+// HISTORY: See StopWatch.cpp
+//     URL: https://playground.arduino.cc/Code/StopWatchClass
+//
+// Released to the public domain
+//
+
+#define STOPWATCH_LIB_VERSION "0.1.03"
+
+#if ARDUINO &gt;= 100
+    #include "Arduino.h"
+#else
+    #include "WProgram.h"
+#endif
+
+class StopWatch 
+{
+public:
+    enum State { RESET, RUNNING, STOPPED };
+    enum Resolution { MILLIS, MICROS, SECONDS };
+    StopWatch(enum Resolution res = MILLIS);
+    void start();
+    void stop(); 
+    void reset();
+    unsigned long value();
+    unsigned long elapsed() { return value(); };
+    bool isRunning();
+    enum State state();
+    enum Resolution resolution() { return _res; };
+
+private:
+    enum State _state;
+    enum Resolution _res;
+    unsigned long _starttime;
+    unsigned long _stoptime;
+    unsigned long (*_gettime)(void);
+    static unsigned long seconds() { return millis()/1000; };
+};
+
+#endif
+// END OF FILE
+
+</pre>
+<p class='vspace'></p><h3><span class='wikiword'>StopWatch</span>.cpp</h3>
+<pre>
+// 
+//    FILE: StopWatch.cpp
+//  AUTHOR: Rob Tillaart
+// VERSION: 0.1.03
+// PURPOSE: Simple StopWatch library for Arduino
+//
+// The library is based upon millis() and therefore
+// has the same restrictions as millis() has wrt overflow.
+//
+// HISTORY: 
+// 0.1.00 - 2011-01-04 initial version
+// 0.1.01 - 2011-01-04 Added better state
+// 0.1.02 - 2011-06-15 Added state() + #defines + lib version
+// 0.1.03 - 2012-01-22 Added several improvements
+//             By mromani &amp; Rob Tillaart
+// 
+// Released to the public domain
+//
+
+#include "StopWatch.h"
+
+StopWatch::StopWatch(enum Resolution res)
+{
+    _res = res;
+    switch(_res) {
+        case MICROS:
+            _gettime = micros;
+            break;
+        case MILLIS:
+            _gettime = millis;
+            break;
+        case SECONDS:
+            _gettime = seconds;
+            break;
+        default:  
+            _gettime = millis;
+            break;
+    }
+    reset();
+}
+
+void StopWatch::reset()
+{
+    _state = StopWatch::RESET;
+    _starttime = _stoptime = 0;
+}
+
+void StopWatch::start()
+{
+    if (_state == StopWatch::RESET || _state == StopWatch::STOPPED)
+    {
+        _state = StopWatch::RUNNING;
+        unsigned long t = _gettime();
+        _starttime += t - _stoptime;
+        _stoptime = t;
+    }
+}
+
+unsigned long StopWatch::value()
+{
+    if (_state == StopWatch::RUNNING) _stoptime = _gettime();
+    return _stoptime - _starttime;
+}
+
+void StopWatch::stop()
+{
+    if (_state == StopWatch::RUNNING)
+    {
+        _state = StopWatch::STOPPED;
+        _stoptime = _gettime();
+    }
+}
+
+bool StopWatch::isRunning()
+{
+    return (_state == StopWatch::RUNNING);
+}
+
+enum StopWatch::State StopWatch::state()
+{
+    return _state;
+}
+// END OF FILE
+
+</pre>
+</div>
+
+
+				
+			</div> <!-- eof pagetext -->
+		
+		<br class="clear"/>
+		
+	</div> <!-- eof page -->
+		
+	
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="https://content.arduino.cc/legacy/js/foundation.min.js"></script>
+	<script>
+	  $(document).foundation();
+	</script>
+	<!--<![endif]-->
+	<!--[if IE 8]>
+	<script src="//content.arduino.cc/legacy/js/foundation_ie8.min.js"></script>
+	<script src="//content.arduino.cc/legacy/js/ie8/jquery.foundation.alerts.js"></script>
+	<script src="//content.arduino.cc/legacy/js/app.js"></script>
+	<![endif]-->
+	
+    <div>
+      <div id="newsletter-modal"></div>
+      <div id="footer"></div>
+    </div>
+  <script src="https://cdn.arduino.cc/header-footer/prod/index.v2.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    new window.arduinoHF.Header(document.getElementById('header'), new arduinoHF.CustomAuth({ no_auth: true }), { env: 'prod', state: '', style: 'arduino' });
+    new window.arduinoHF.Footer(document.getElementById('footer'), { env: 'prod', style: 'arduino' });
+  </script>
+</body>
+</html>
